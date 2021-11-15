@@ -237,10 +237,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-<<<<<<< HEAD
-=======
   ruby
->>>>>>> aa8f78d1573113d6e66df93241660d48d47777ec
   x86_64-darwin-20
   x86_64-linux
 
