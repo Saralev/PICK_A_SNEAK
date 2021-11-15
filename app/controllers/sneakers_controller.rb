@@ -12,9 +12,9 @@ class SneakersController < ApplicationController
   end
 
   def create
-    @user = current_user
     @sneaker = Sneaker.new(sneaker_params)
-    # we need `restaurant_id` to associate review with corresponding restaurant
+    @user = current_user
+    @sneaker.user_id = @user.id
     if @sneaker.save
       redirect_to sneaker_path(@sneaker)
     else
