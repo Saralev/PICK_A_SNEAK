@@ -1,0 +1,8 @@
+
+<%= simple_form_for [@sneaker] do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :name %>
+  <%= f.input :size %>
+  <%= f.input :price %>
+  <%= f.submit "Create your sneaker !", class: "btn btn-primary" %>
+<% end %>
