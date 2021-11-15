@@ -15,7 +15,7 @@ class SneakersController < ApplicationController
     @sneaker = Sneaker.new(sneaker_params)
     # we need `restaurant_id` to associate review with corresponding restaurant
     if @sneaker.save
-      redirect_to sneaker_path(@Sneaker)
+      redirect_to sneaker_path(@sneaker)
     else
       render :new
     end
