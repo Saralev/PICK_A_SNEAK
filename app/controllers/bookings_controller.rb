@@ -7,7 +7,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.sneaker = @sneaker
+    @user = current_user
+    @booking.sneaker_id = @sneaker.id
+    @booking.user_id = @user.id
     if @booking.save
       redirect_to dashboard_path
     else
@@ -22,6 +24,6 @@ class BookingsController < ApplicationController
   end
 
   def set_sneaker
-    @sneaker = Sneaker.find(params[:id])
+    @sneaker = Sneaker.find(params[:sneaker_id])
   end
 end
