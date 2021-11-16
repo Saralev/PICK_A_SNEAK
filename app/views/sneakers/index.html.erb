@@ -1,25 +1,22 @@
 	<link type="text/css" rel="stylesheet" href="index.scss"/>
-<ul>
-  <% @sneakers.each do |sneaker| %>
-    <li><%= sneaker.brand %></li>
-    <li><%= sneaker.name %></li>
-    <li><%= sneaker.size %></li>
-    <li><%= sneaker.price %></li>
-  <% end %>
-</ul>
 
 <h1> 8 sneakers found</h1>
 <div class="main-container">
   <div style="display: flex">
-    <div id="card">
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
-      <%= image_tag('sneak.png') %>
+    <div id="cards">
+      <% @sneakers.each do |sneaker| %>
+        <%= link_to sneaker_path(sneaker) do %>
+          <div class= "card">
+          <%= image_tag('sneak.png') %>
+          <div id= "description">
+            <h3><%= sneaker.brand %></h3>
+            <h3><%= sneaker.name %></h3>
+            <h3><%= sneaker.size %></h3>
+            <h3><%= sneaker.price %></h3>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
 
     <div class="map">
