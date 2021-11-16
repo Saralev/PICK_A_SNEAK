@@ -1,4 +1,10 @@
 <h2><%= @sneaker.brand %></h2>
+<% if @sneaker.image.attached? %>
+  <p><%= cl_image_tag @sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+  <% else %>
+    <p><%= image_tag('sneak.png') %></p>
+<% end %>
 <p><%= @sneaker.name %></p>
 <p><%= @sneaker.size %></p>
 <p><%= @sneaker.price %></p>
+<p><%= @sneaker.description %></p>
