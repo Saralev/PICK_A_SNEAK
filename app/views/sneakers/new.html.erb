@@ -6,3 +6,7 @@
   <%= f.input :price %>
   <%= f.submit "Create your sneaker !", class: "btn btn-primary" %>
 <% end %>
+
+<% if policy(Sneaker).create? %>
+  <%= link_to "New sneaker", new_sneaker_path %>
+<% end %>
