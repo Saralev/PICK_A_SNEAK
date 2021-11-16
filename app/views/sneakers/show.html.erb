@@ -1,4 +1,6 @@
 <h2><%= @sneaker.brand %></h2>
+<p><%= cl_image_tag @sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
 <p><%= @sneaker.name %></p>
 <p><%= @sneaker.size %></p>
 <p><%= @sneaker.price %></p>
+<p><%= @sneaker.description %></p>
