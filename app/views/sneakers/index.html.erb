@@ -1,4 +1,6 @@
 	<link type="text/css" rel="stylesheet" href="index.scss"/>
+
+<%= render 'shared/searchbar' %>
 <ul>
   <% @sneakers.each do |sneaker| %>
     <li><%= sneaker.brand %></li>
