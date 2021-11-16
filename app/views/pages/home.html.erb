@@ -2,7 +2,12 @@
   <div class="container">
     <h1><strong>Pick a Sneak</strong>!</h1>
     <p>Rent your sneakers to others, find sneakers to rent !</p>
+    <%= render 'shared/searchbar' %>
     <%# <a class="btn btn-flat" href="#">Find sneakers</a> %>
-    <%= link_to "Find sneakers !", sneakers_path, class: "btn btn-flat" %>
+    <br>
+    <br>
+    <div class="btn-sneakers-container">
+      <%= link_to "All sneakers", sneakers_path, class: "btn btn-flat btn-sneakers" %>
+    </div>
   </div>
 </div>
