@@ -1,18 +1,25 @@
 class SneakersController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+
   def index
-    @sneakers = Sneaker.all
+    @sneakers = policy_scope(Sneaker)
   end
 
   def show
     @sneaker = Sneaker.find(params[:id])
+    authorize @sneaker
   end
 
   def new
     @sneaker = Sneaker.new
+    authorize @sneaker
   end
 
   def create
     @sneaker = Sneaker.new(sneaker_params)
+    authorize @sneaker
     @user = current_user
     @sneaker.user_id = @user.id
     if @sneaker.save
