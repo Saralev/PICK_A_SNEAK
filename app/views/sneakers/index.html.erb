@@ -10,7 +10,11 @@
       <% @sneakers.each do |sneaker| %>
         <%= link_to sneaker_path(sneaker) do %>
           <div class= "card">
-          <%= image_tag('sneak.png') %>
+            <% if sneaker.image.attached? %>
+              <p><%= cl_image_tag sneaker.image.key, height: 200, width: 300, crop: :fill %></p>
+            <% else %>
+              <p><%= image_tag('sneak.png') %></p>
+            <% end %>
           <div id= "description">
             <h3><%= sneaker.brand %></h3>
             <h3><%= sneaker.name %></h3>
