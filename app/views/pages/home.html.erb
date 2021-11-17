@@ -3,14 +3,12 @@
     <h1><strong>Pick a Sneak</strong>!</h1>
     <p>Rent your sneakers to others, find sneakers to rent !</p>
     <%= form_tag sneakers_path, method: :get do %>
-  <%= text_field_tag :query,
+    <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find your sneakers"
-  %>
+    placeholder: "Find your sneakers"%>
   <%= submit_tag "Pick'a'Sneack", class: "btn btn-primary" %>
 <% end %>
-    <%# <a class="btn btn-flat" href="#">Find sneakers</a> %>
     <br>
     <br>
     <div class="btn-sneakers-container">

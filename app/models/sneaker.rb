@@ -11,6 +11,6 @@ class Sneaker < ApplicationRecord
   pg_search_scope :search,
     against: [ :name, :brand, :size ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end
