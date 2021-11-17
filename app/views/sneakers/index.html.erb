@@ -1,3 +1,6 @@
+
+<%= render 'shared/searchbar' %>
+
 <div>
 <%= form_tag sneakers_path, method: :get do %>
   <%= text_field_tag :query,
@@ -7,10 +10,13 @@
   %>
   <%= submit_tag "Pick'a'Sneack", class: "btn btn-primary" %>
 <% end %>
-
 </div>
 
+
+</div>
+<div class="card-title">
 <h1> 10 sneakers found</h1>
+</div>
 <div class="main-containers">
   <div style="display: flex">
     <div id="cards" class='col-8 '>
