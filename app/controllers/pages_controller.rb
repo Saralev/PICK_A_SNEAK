@@ -15,5 +15,6 @@ class PagesController < ApplicationController
                 users.id = #{current_user.id}
     "
     @bookings_ordered = ActiveRecord::Base.connection.execute(query)
+    @user = current_user
   end
 end
