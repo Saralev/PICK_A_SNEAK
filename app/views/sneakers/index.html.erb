@@ -1,4 +1,15 @@
 <%= render 'shared/searchbar' %>
+<div>
+<%= form_tag sneakers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your sneakers"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+</div>
 <div class="card-title">
 <h1> 10 sneakers found</h1>
 </div>
