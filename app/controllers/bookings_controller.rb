@@ -26,7 +26,6 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    raise
   end
 
   private
