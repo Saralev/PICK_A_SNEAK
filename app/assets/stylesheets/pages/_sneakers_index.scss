@@ -1,0 +1,59 @@
+
+.main-container {
+  display: flex;
+
+
+}
+#cards {
+  display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 16px;
+}
+
+.map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.card
+img {
+ height: 300px;
+ padding-bottom: 20px;
+}
+
+h3 {
+font-family: roboto;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+color: #595050;
+}
+
+.results {
+font-family:Georgia, 'Times New Roman', Times, serif;
+font-style: normal;
+font-weight: bold;
+font-size: 60px;
+line-height: 68px;
+color: #595050;
+text-align: center;
+}
+
+.card {
+  background: rgb(244,244,244);
+  border: none;
+  height: 500px;
+  width: 300px;
+
+
+}
+#description {
+  border: solid rgba(44, 40, 40, 0.151);
+  border-radius: 10%;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
