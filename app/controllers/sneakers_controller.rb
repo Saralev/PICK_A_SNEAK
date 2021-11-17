@@ -2,16 +2,9 @@ class SneakersController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
   def index
     if params[:query].present?
-      sql_query = " \
-        sneakers.name @@ :query \
-        OR sneakers.brand @@ :query \
-        OR sneakers.size @@ :query \
-      "
-      @sneakers = policy_scope(Sneaker).where(sql_query, query: "%#{params[:query]}%")
-
+      @sneakers = policy_scope(Sneaker).search(params[:query])
     else
       @sneakers = policy_scope(Sneaker)
     end
