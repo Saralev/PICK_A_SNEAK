@@ -1,11 +1,13 @@
 <div>
-  <h2><%= @sneaker.brand %></h2>
+  <h1><%= @sneaker.brand %></h1>
+  <div class="blabla">
   <% if @sneaker.image.attached? %>
     <p><%= cl_image_tag @sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
     <% else %>
       <p><%= image_tag('sneak.png') %></p>
+      </div>
   <% end %>
-  <p><%= @sneaker.name %></p>
+  <h2><%= @sneaker.name %></h2>
   <p><%= @sneaker.size %></p>
   <p><%= @sneaker.price %></p>
   <p><%= @sneaker.description %></p>
