@@ -1,0 +1,34 @@
+.status {
+
+
+  &.true {
+    color: green;
+  }
+
+  &.false {
+    color: red;
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+.rect {
+  border-radius: 20px;
+}
+
+.card-body  {
+
+  border-radius: 5px;
+  img {
+    width: 200px;
+    margin-bottom: 50px !important;
+  }
+}
+
+.card {
+  img {
+    width: 200px !important;
+  }
+}
