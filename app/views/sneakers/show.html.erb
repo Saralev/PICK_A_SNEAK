@@ -8,3 +8,5 @@
 <p><%= @sneaker.size %></p>
 <p><%= @sneaker.price %></p>
 <p><%= @sneaker.description %></p>
+
+<%= button_to "Book your shoes !", new_sneaker_booking_path(@sneaker), :method => "get" %>
