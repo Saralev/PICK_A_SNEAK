@@ -4,7 +4,17 @@ class SneakersController < ApplicationController
 
 
   def index
-    @sneakers = policy_scope(Sneaker)
+    if params[:query].present?
+      sql_query = " \
+        sneakers.name @@ :query \
+        OR sneakers.brand @@ :query \
+        OR sneakers.size @@ :query \
+      "
+      @sneakers = policy_scope(Sneaker).where(sql_query, query: "%#{params[:query]}%")
+
+    else
+      @sneakers = policy_scope(Sneaker)
+    end
   end
 
   def show
