@@ -3,14 +3,16 @@
 
 .main-container {
   display: flex;
+  padding: 0 20px;
 
 
 
 }
+
 #cards {
   display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 16px;
+   gap: 10px 20px;
 }
 
 .map {
@@ -22,16 +24,18 @@
 
 .card
 img {
- height: 300px;
+ height: 250px;
+ object-fit: cover;
  padding-bottom: 20px;
 }
 
-h3 {
+h4 {
 font-family: roboto;
 font-style: normal;
 font-weight: bold;
 text-align: center;
 color: #595050;
+font-size: 20px;
 }
 
 h1 {
@@ -47,8 +51,8 @@ text-align: center;
 .card {
   background: rgb(244,244,244);
   border: none;
-  height: 500px;
-  width: 300px;
+  height: 400px;
+  width: 250px;
 
 
 }
