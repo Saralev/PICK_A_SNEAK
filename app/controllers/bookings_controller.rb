@@ -1,8 +1,13 @@
 class BookingsController < ApplicationController
-  before_action :set_sneaker
+  before_action :set_sneaker, only: [:new, :create]
+
+  def index
+    @current_user_bookings = policy_scope(Booking)
+  end
 
   def new
     @booking = Booking.new
+    authorize(@booking)
   end
 
   def create
@@ -10,6 +15,7 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking.sneaker_id = @sneaker.id
     @booking.user_id = @user.id
+     authorize(@booking)
     if @booking.save
       redirect_to dashboard_path
     else

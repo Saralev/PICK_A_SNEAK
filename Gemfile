@@ -37,6 +37,9 @@ gem 'simple_form'
 # Installing Devise gem
 gem 'devise'
 
+# Installing cloudinary
+gem 'cloudinary'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
