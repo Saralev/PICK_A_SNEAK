@@ -1,33 +1,28 @@
-	<link type="text/css" rel="stylesheet" href="index.scss"/>
-
 <%= render 'shared/searchbar' %>
 
-
-<h1> 8 sneakers found</h1>
-<div class="main-container">
+<h1> 10 sneakers found</h1>
+<div class="main-containers">
   <div style="display: flex">
-    <div id="cards">
+    <div id="cards" class='col-8 '>
       <% @sneakers.each do |sneaker| %>
         <%= link_to sneaker_path(sneaker) do %>
           <div class= "card">
             <% if sneaker.image.attached? %>
-              <p><%= cl_image_tag sneaker.image.key, height: 200, width: 300, crop: :fill %></p>
+              <p><%= cl_image_tag sneaker.image.key %></p>
             <% else %>
               <p><%= image_tag('sneak.png') %></p>
             <% end %>
-          <div id= "description">
-            <h3><%= sneaker.brand %></h3>
-            <h3><%= sneaker.name %></h3>
-            <h3><%= sneaker.size %></h3>
-            <h3><%= sneaker.price %></h3>
+          <div id= "details">
+            <h4><%= sneaker.brand %></h4>
+            <h4><%= sneaker.name %></h4>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
 
-    <div class="map">
-      <%= image_tag('map.png') %>
+    <div class="map  col-4">
+      <%#= image_tag('map.png') %>
     </div>
   </div>
 </div>
