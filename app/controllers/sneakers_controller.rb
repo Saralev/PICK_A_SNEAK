@@ -2,9 +2,12 @@ class SneakersController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
   def index
-    @sneakers = policy_scope(Sneaker)
+    if params[:query].present?
+      @sneakers = policy_scope(Sneaker).search(params[:query])
+    else
+      @sneakers = policy_scope(Sneaker)
+    end
   end
 
   def show

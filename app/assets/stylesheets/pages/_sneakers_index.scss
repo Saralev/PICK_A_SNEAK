@@ -1,13 +1,12 @@
-
 .main-container {
   display: flex;
-
-
+  padding: 0 20px;
 }
+
 #cards {
   display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 16px;
+   gap: 10px 20px;
 }
 
 .map {
@@ -16,22 +15,18 @@
   top: 0;
 }
 
-.card
-img {
- height: 300px;
- padding-bottom: 20px;
-}
 
-h3 {
+#details h4 {
 font-family: roboto;
 font-style: normal;
 font-weight: bold;
 text-align: center;
 color: #595050;
+font-size: 20px;
 }
 
-.results {
-font-family:Georgia, 'Times New Roman', Times, serif;
+.card-title h1 {
+font-family: Jaldi;
 font-style: normal;
 font-weight: bold;
 font-size: 60px;
@@ -42,16 +37,22 @@ text-align: center;
 
 .card {
   background: rgb(244,244,244);
-  border: none;
-  height: 500px;
-  width: 300px;
+  height: 300px;
+  width: 255px;
+   border: solid rgba(44, 40, 40, 0.151);
+   border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
 
 }
-#description {
-  border: solid rgba(44, 40, 40, 0.151);
-  border-radius: 10%;
+
+.card img {
+ height: 200px;
+ width: 250px;
+ object-fit: cover;
+ border-radius: 20px;
 }
+
 
 a {
   text-decoration: none;
