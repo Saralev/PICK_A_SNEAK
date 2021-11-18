@@ -1,94 +1,88 @@
-<p>Sneakers waiting for acceptation from owner</p>
+<html>
+  <head>
+    <h1>My dashboard</h1>
+  </head>
 
-<div class='container'>
-  <div class="row">
-    <% @current_user_bookings.each do |booking| %>
-      <div class='col'>
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          <div class="card-body">
-            <p class="card-text">
-              Start date: <%= booking.start_date%>
-              End date: <%= booking.end_date%>
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
+  <body>
+    <h2>Sneakers waiting for acceptation from owner</h2>
+      <div class="main-containers">
+        <div style="display: flex">
+          <div id="cards" class='col-8 '>
+            <% @current_user_bookings.each do |booking| %>
+            <div id= "details">
+              <%= booking.brand %>
+              <%= booking.name %>
+                Start date: <%= booking.start_date%>
+                End date: <%= booking.end_date%>
               <div class="btn-group">
-              <% if booking.approved != true %>
+                <% if booking.approved != true %>
                 <%= link_to "Pending for acceptation from owner", booking_path(booking, {booking: {approved: true}}), method: :patch, class: "btn btn-info" %>
                 <%= link_to "Refused the booking", booking_path(booking, {booking: {approved: false}}), method: :patch, class: "btn btn-danger" %>
-
-              <% end %>
-              </div>
-            </div>
+                <% end %>
           </div>
         </div>
       </div>
 
+            <%= booking.review %>
+            <%= booking.rating%>
+        <% end %>
+      </div>
 
-        <%= booking.approved%>
-        <%= booking.review %>
-        <%= booking.rating%>
-    <% end %>
-  </div>
+      <h2>My sneakers people want to rent </h2>
+      <div class="row">
+        <% @bookings_ordered.each do |b| %>
+      <% booking = Booking.find(b["id"]) %>
+          <div class='col'>
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              <div class="card-body">
+                <p class="card-text">
+                  Start date: <%= booking.start_date%>
+                  End date: <%= booking.end_date%>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
 
-  <p>My sneakers people want to rent </p>
-
-  <div class="row">
-    <% @bookings_ordered.each do |b| %>
-  <% booking = Booking.find(b["id"]) %>
-      <div class='col'>
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          <div class="card-body">
-            <p class="card-text">
-              Start date: <%= booking.start_date%>
-              End date: <%= booking.end_date%>
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+            <%= booking.review %>
+            <%= booking.rating%>
+        <% end %>
       </div>
-        <%= booking.approved%>
-        <%= booking.review %>
-        <%= booking.rating%>
-    <% end %>
-  </div>
 
-   <p>My sneakers</p>
+      <h3>>My sneakers</h3>
 
- <div class="row">
-    <% @user.sneakers.each do |sneaker| %>
-      <div class='col'>
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          <div class="card-body">
-            <p class="card-text">
+    <div class="row">
+        <% @user.sneakers.each do |sneaker| %>
+          <div class='col'>
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              <div class="card-body">
+                <p class="card-text">
 
-              <% if sneaker.image.attached? %>
-                <p><%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
-                <% else %>
-                  <p><%= image_tag('sneak.png') %></p>
-              <% end %>
-              <h4><%= sneaker.brand %></h4>
-              <p><%= sneaker.name %></p>
-              <p><%= sneaker.size %></p>
-              <p><%= sneaker.price %></p>
-              <p><%= sneaker.description %></p>
+                  <% if sneaker.image.attached? %>
+                    <p><%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+                    <% else %>
+                      <p><%= image_tag('sneak.png') %></p>
+                  <% end %>
+                  <p><%= sneaker.name %></p>
+                  <p><%= sneaker.size %></p>
+                  <p><%= sneaker.price %></p>
 
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
 
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 
-</div>
+    </div>
+  </body>
