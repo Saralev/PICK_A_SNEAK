@@ -43,3 +43,15 @@
 .btn-sneakers-container {
   text-align: center;
 }
+
+.btn-success {
+  color: white;
+  border-radius: 20px;
+  transform: scale(0.9);
+  background: #1EDD88;
+}
+
+.btn-success:hover {
+  color: white;
+  background: #1BCB7F;
+}

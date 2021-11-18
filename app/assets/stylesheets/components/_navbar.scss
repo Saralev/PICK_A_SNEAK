@@ -12,9 +12,18 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-brand img {
+  width: 35px;
+  transform: scale(2);
 }
 .dropdown-menu.dropdown-menu-right {
   left: -312%;
+}
+
+.navbar .nav-item {
+  box-shadow: black;
+}
+
+.navbar-brand {
+  transform: rotateZ(45deg);
 }
