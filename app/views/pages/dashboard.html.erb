@@ -1,27 +1,37 @@
-<p>Sneakers waiting for acceptation from owner</p>
+<html>
+  <head>
+    <h1>My dashboard</h1>
+  </head>
 
-<div class='container'>
-  <div class="row">
-    <% @current_user_bookings.each do |booking| %>
-      <div class='col'>
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-          <div class="card-body">
-            <p class="card-text">
-              Start date: <%= booking.start_date%>
-              End date: <%= booking.end_date%>
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-              <% if booking.approved != true %>
-                <%= link_to "Pending for acceptation from owner", booking_path(booking, {booking: {approved: true}}), method: :patch, class: "btn btn-info" %>
-                <%= link_to "Refused the booking", booking_path(booking, {booking: {approved: false}}), method: :patch, class: "btn btn-danger" %>
-
-              <% end %>
-              </div>
+  <body>
+    <h2>Sneakers waiting for acceptation </h2>
+      <div class="main-containers">
+        <div style="display: flex">
+          <div id="cards" class='col-8 '>
+            <% @current_user_bookings.each do |booking| %>
+            <div class= "booking-card">
+             <img src="/assets/sneak-251079d4422ed5f6f0b88849fe7caa5b797a79c34af7c9cf049874b3132fe36e.png">
+               <h5> Start date: <%= booking.start_date.strftime('%d-%m-%Y')%> - </h5>
+               <h5>End date: <%= booking.end_date.strftime('%d-%m-%Y')%> </h5>
+                <h5> <%= booking.sneaker.name %></h5>
+              <div class="status-button <%= booking.approved %>">
+                <% if booking.approved == nil %>
+                Pending...
+                <% elsif  booking.approved == true %>
+                Accepted
+                <% else %>
+                Refused
+                <% end %>
+            </div>
+            </div>
             </div>
           </div>
         </div>
+      </div>
+
+            <%= booking.review %>
+            <%= booking.rating%>
+        <% end %>
       </div>
 
 
@@ -49,18 +59,19 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
 
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+            <%= booking.review %>
+            <%= booking.rating%>
+        <% end %>
       </div>
-        <%= booking.approved%>
-        <%= booking.review %>
-        <%= booking.rating%>
-    <% end %>
-  </div>
 
-   <p>My sneakers</p>
+      <h3>>My sneakers</h3>
+
 
  <div class="row">
     <% @my_sneakers.each do |sneaker| %>
@@ -70,27 +81,27 @@
           <div class="card-body">
             <p class="card-text">
 
-              <% if sneaker.image.attached? %>
-                <p><%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
-                <% else %>
-                  <p><%= image_tag('sneak.png') %></p>
-              <% end %>
-              <h4><%= sneaker.brand %></h4>
-              <p><%= sneaker.name %></p>
-              <p><%= sneaker.size %></p>
-              <p><%= sneaker.price %></p>
-              <p><%= sneaker.description %></p>
 
-            </p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
+                  <% if sneaker.image.attached? %>
+                    <p><%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+                    <% else %>
+                      <p><%= image_tag('sneak.png') %></p>
+                  <% end %>
+                  <p><%= sneaker.name %></p>
+                  <p><%= sneaker.size %></p>
+                  <p><%= sneaker.price %></p>
 
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
 
-</div>
+    </div>
+  </body>
