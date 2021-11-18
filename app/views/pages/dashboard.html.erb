@@ -4,21 +4,25 @@
   </head>
 
   <body>
-    <h2>Sneakers waiting for acceptation from owner</h2>
+    <h2>Sneakers waiting for acceptation </h2>
       <div class="main-containers">
         <div style="display: flex">
           <div id="cards" class='col-8 '>
             <% @current_user_bookings.each do |booking| %>
             <div id= "details">
-              <%= booking.brand %>
-              <%= booking.name %>
-                Start date: <%= booking.start_date%>
-                End date: <%= booking.end_date%>
-              <div class="btn-group">
-                <% if booking.approved != true %>
-                <%= link_to "Pending for acceptation from owner", booking_path(booking, {booking: {approved: true}}), method: :patch, class: "btn btn-info" %>
-                <%= link_to "Refused the booking", booking_path(booking, {booking: {approved: false}}), method: :patch, class: "btn btn-danger" %>
+              <%= booking.user_id %>
+              <%= booking.sneaker_id %>
+                Start date: <%= booking.start_date.strftime('%d-%m-%Y')%>
+                End date: <%= booking.end_date.strftime('%d-%m-%Y')%>
+              <div class="status-button" <% booking.approved %>>
+                <% if booking.approved == nil %>
+                Pending...
+                <% elsif  booking.approved == true %>
+                Accepted
+                <% else %>
+                Refused
                 <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -28,10 +32,10 @@
         <% end %>
       </div>
 
-      <h2>My sneakers people want to rent </h2>
+      <h2> Shoes waiting for acceptation from owner </h2>
       <div class="row">
         <% @bookings_ordered.each do |b| %>
-      <% booking = Booking.find(b["id"]) %>
+        <% booking = Booking.find(b["id"]) %>
           <div class='col'>
             <div class="card shadow-sm">
               <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>

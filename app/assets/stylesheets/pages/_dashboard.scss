@@ -32,3 +32,23 @@ h2 {
     width: 200px !important;
   }
 }
+
+
+.status-button {
+  color: #bbbbbb;
+  width: 200px;
+  height: 100px;
+  border: black
+}
+
+.status-button.nil {
+  color: yellow;
+}
+
+.status-button.false {
+  color: red;
+}
+
+.status-button.true {
+  color: green;
+}
