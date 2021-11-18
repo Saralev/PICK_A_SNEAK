@@ -25,8 +25,24 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    authorize(@booking)
     @booking.update(booking_params)
   end
+
+  def approve
+    booking = Booking.find(params[:id])
+    authorize(booking)
+    booking.update(approved: true)
+    redirect_to dashboard_path
+  end
+
+  def refuse
+    booking = Booking.find(params[:id])
+    authorize(booking)
+    booking.update(approved: false)
+    redirect_to dashboard_path
+  end
+
 
   private
 

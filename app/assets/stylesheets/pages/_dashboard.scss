@@ -1,6 +1,18 @@
 
+.status {
 
-h4 {
+
+  &.true {
+    color: green;
+  }
+
+  &.false {
+    color: red;
+  }
+}
+
+h2 {
+
   text-align: center;
 }
 
@@ -22,7 +34,6 @@ h4 {
     width: 200px !important;
   }
 }
-
 
 .status-button {
   display: inline-block;
