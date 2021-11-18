@@ -8,6 +8,13 @@ class SneakersController < ApplicationController
     else
       @sneakers = policy_scope(Sneaker)
     end
+    @markers = @sneakers.geocoded.map do |sneaker|
+      {
+        lat: sneaker.latitude,
+        lng: sneaker.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { sneaker: sneaker })
+      }
+    end
   end
 
   def show
@@ -36,6 +43,6 @@ class SneakersController < ApplicationController
   private
 
   def sneaker_params
-    params.require(:sneaker).permit(:brand, :name, :size, :price, :image, :description)
+    params.require(:sneaker).permit(:brand, :name, :size, :price, :image, :description, :address)
   end
 end
