@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :update]
   get "bookings/:id/approve", to: "bookings#approve", as: :approve_booking
+  get "bookings/:id/refuse", to: "bookings#refuse", as: :refuse_booking
 end

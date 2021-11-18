@@ -36,6 +36,14 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def refuse
+    booking = Booking.find(params[:id])
+    authorize(booking)
+    booking.update(approved: false)
+    redirect_to dashboard_path
+  end
+
+
   private
 
   def booking_params

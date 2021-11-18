@@ -17,4 +17,9 @@ class BookingPolicy < ApplicationPolicy
     # le current_user est le propriétaire de la sneaker qu'on loue
     record.sneaker.user == user
   end
+
+  def refuse?
+    # le current_user est le propriétaire de la sneaker qu'on loue
+    record.sneaker.user == user
+  end
 end
