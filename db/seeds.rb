@@ -26,16 +26,16 @@ lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting indust
  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
 
 puts "Creating sneakers..."
-Sneaker.create(brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: lorem, user: benjamin)
-Sneaker.create(brand: "Nike", name: "Nike Waffle One SE ", size: 42, price: 135, description: lorem, user: chloe)
-Sneaker.create(brand: "New balance", name: "New Balance - 327", size: 36, price: 160, description: lorem, user: eric)
-Sneaker.create(brand: "Nike", name: "AIR FORCE 1 SHADOW ", size: 36, price: 120, description: lorem, user: aurelie)
-Sneaker.create(brand: "Veja", name: "Veja Venturi ", size: 41, price: 120, description: lorem, user: benjamin)
-Sneaker.create(brand: "Converse", name: "Chuck Taylor All Star Classic", size: 37, price: 90, description: lorem, user: elsa)
-Sneaker.create(brand: "Adidas", name: "Baskets Ozweego", size: 41, price: 100, description: lorem, user: aurelie)
-Sneaker.create(brand: "Adidas", name: "STAN SMITH - Baskets basses", size: 37, price: 100, description: lorem, user: eric)
-Sneaker.create(brand: "Nike", name: "Venture runner", size: 38, price: 105, description: lorem, user: chloe)
-Sneaker.create(brand: "Vans", name: "OLD SKOOL PLATFORM - Baskets basses", size: 35, price: 90, description: lorem, user: elsa)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: lorem, user: benjamin)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Nike", name: "Nike Waffle One SE ", size: 42, price: 135, description: lorem, user: chloe)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "New balance", name: "New Balance - 327", size: 36, price: 160, description: lorem, user: eric)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Nike", name: "AIR FORCE 1 SHADOW ", size: 36, price: 120, description: lorem, user: aurelie)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Veja", name: "Veja Venturi ", size: 41, price: 120, description: lorem, user: benjamin)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Converse", name: "Chuck Taylor All Star Classic", size: 37, price: 90, description: lorem, user: elsa)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Adidas", name: "Baskets Ozweego", size: 41, price: 100, description: lorem, user: aurelie)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Adidas", name: "STAN SMITH - Baskets basses", size: 37, price: 100, description: lorem, user: eric)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Nike", name: "Venture runner", size: 38, price: 105, description: lorem, user: chloe)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Vans", name: "OLD SKOOL PLATFORM - Baskets basses", size: 35, price: 90, description: lorem, user: elsa)
 puts "Sneakers created!"
 
 
