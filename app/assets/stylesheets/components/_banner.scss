@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 200px 0;
+  position: relative;
 }
 
 .banner h1 {
@@ -17,4 +18,8 @@
   color: white;
   opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-title {
+  margin-left: 200px;
 }
