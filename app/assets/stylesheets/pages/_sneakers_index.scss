@@ -17,21 +17,17 @@
 
 
 #details h4 {
-font-family: roboto;
 font-style: normal;
 font-weight: bold;
 text-align: center;
-color: #595050;
 font-size: 20px;
 }
 
 .card-title h1 {
-font-family: Jaldi;
 font-style: normal;
 font-weight: bold;
 font-size: 60px;
 line-height: 68px;
-color: #595050;
 text-align: center;
 }
 
@@ -39,8 +35,8 @@ text-align: center;
   background: rgb(244,244,244);
   height: 300px;
   width: 255px;
-   border: solid rgba(44, 40, 40, 0.151);
-   border-radius: 20px;
+  border: solid rgba(44, 40, 40, 0.151);
+  border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
 
@@ -57,4 +53,23 @@ text-align: center;
 a {
   text-decoration: none;
   color: #000;
+}
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgb(98, 98, 214);
+  border-color: rgb(98, 98, 214);
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
 }
