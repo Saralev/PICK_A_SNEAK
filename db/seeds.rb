@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
 puts "Cleaning up database..."
 Booking.destroy_all
 puts "Cleaning up Bookings..."
@@ -26,7 +28,11 @@ lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting indust
  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
 
 puts "Creating sneakers..."
-Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: lorem, user: benjamin)
+first = Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: 'lorem', user: benjamin)
+file = URI.open(Cloudinary::Uploader.upload('https://source.unsplash.com/1600x900/?sneaker')['secure_url'])
+first.image.attach(io: file, filename: 'sneaker.jpg', content_type: 'image/jpg')
+#Faire boucle pour l'appliquer à tous les autres
+
 Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Nike", name: "Nike Waffle One SE ", size: 42, price: 135, description: lorem, user: chloe)
 Sneaker.create(address: "16 villa gaudelet, Paris", brand: "New balance", name: "New Balance - 327", size: 36, price: 160, description: lorem, user: eric)
 Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Nike", name: "AIR FORCE 1 SHADOW ", size: 36, price: 120, description: lorem, user: aurelie)
@@ -37,17 +43,3 @@ Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Adidas", name: "STAN
 Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Nike", name: "Venture runner", size: 38, price: 105, description: lorem, user: chloe)
 Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Vans", name: "OLD SKOOL PLATFORM - Baskets basses", size: 35, price: 90, description: lorem, user: elsa)
 puts "Sneakers created!"
-
-
-
-require "open-uri"
-require "yaml"
-
-file = ""
-sample = YAML.load(open(file).read)
-
-puts 'Pick a sneak...'
-sneakers = {}  # slug => sneaker
-sample["sneakers"].each do |sneaker|
-  sneakers[sneaker["slug"]] = sneaker.create! sneaker.slice("name", "brand", "size")
-end
