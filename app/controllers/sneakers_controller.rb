@@ -13,6 +13,7 @@ class SneakersController < ApplicationController
   def show
     @sneaker = Sneaker.find(params[:id])
     authorize @sneaker
+    @origin_path = request.env["HTTP_TURBOLINKS_REFERRER"]
   end
 
   def new
