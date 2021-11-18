@@ -2,3 +2,24 @@
 .banner-title {
   margin-left: 200px;
 }
+
+.search-bar-home {
+ position: relative;
+margin: 0 200px;
+border-radius: 5px;
+}
+
+.search-bar-home .btn {
+  position: absolute;
+  right: 200px;
+  left: 200px;
+  background-color: rgb(98, 98, 214);
+  border-color: rgb(98, 98, 214);
+  border-radius: 10px;
+}
+
+.btn-sneakers-container{
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+}

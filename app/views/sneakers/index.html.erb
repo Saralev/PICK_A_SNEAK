@@ -1,6 +1,19 @@
-<%= render 'shared/searchbar' %>
 
+<div class='container mt-5'>
+
+  <%= form_tag sneakers_path, method: :get do %>
+    <div class="search-form-control form-group">
+      <%= text_field_tag :query, params[:query], class: 'form-control string required', placeholder: "Find your sneakers" %>
+      <%= submit_tag "Pick'a'Sneack", class: "btn btn-flat" %>
+    </div>
+  <% end %>
+</div>
+
+
+</div>
+<div class="card-title">
 <h1> 10 sneakers found</h1>
+</div>
 <div class="main-containers">
   <div style="display: flex">
     <div id="cards" class='col-8 '>
@@ -22,7 +35,7 @@
     </div>
 
     <div class="map  col-4">
-      <%#= image_tag('map.png') %>
+      <%= image_tag('map.png') %>
     </div>
   </div>
 </div>

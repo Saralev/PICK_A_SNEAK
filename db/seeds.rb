@@ -37,3 +37,17 @@ Sneaker.create(brand: "Adidas", name: "STAN SMITH - Baskets basses", size: 37, p
 Sneaker.create(brand: "Nike", name: "Venture runner", size: 38, price: 105, description: lorem, user: chloe)
 Sneaker.create(brand: "Vans", name: "OLD SKOOL PLATFORM - Baskets basses", size: 35, price: 90, description: lorem, user: elsa)
 puts "Sneakers created!"
+
+
+
+require "open-uri"
+require "yaml"
+
+file = ""
+sample = YAML.load(open(file).read)
+
+puts 'Pick a sneak...'
+sneakers = {}  # slug => sneaker
+sample["sneakers"].each do |sneaker|
+  sneakers[sneaker["slug"]] = sneaker.create! sneaker.slice("name", "brand", "size")
+end

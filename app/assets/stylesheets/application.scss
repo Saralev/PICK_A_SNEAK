@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
+
+body {
+  background-color: #FFFDED;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bebas Neue", "cursive";
+}
+
+p {
+  font-family: 'Indie Flower', "cursive";
+}
