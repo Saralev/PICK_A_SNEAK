@@ -9,12 +9,12 @@
         <div style="display: flex">
           <div id="cards" class='col-8 '>
             <% @current_user_bookings.each do |booking| %>
-            <div id= "details">
-              <%= booking.user_id %>
-              <%= booking.sneaker_id %>
-                Start date: <%= booking.start_date.strftime('%d-%m-%Y')%>
-                End date: <%= booking.end_date.strftime('%d-%m-%Y')%>
-              <div class="status-button" <% booking.approved %>>
+            <div class= "booking-card">
+             <img src="/assets/sneak-251079d4422ed5f6f0b88849fe7caa5b797a79c34af7c9cf049874b3132fe36e.png">
+               <h5> Start date: <%= booking.start_date.strftime('%d-%m-%Y')%> - </h5>
+               <h5>End date: <%= booking.end_date.strftime('%d-%m-%Y')%> </h5>
+                <h5> <%= booking.sneaker.name %></h5>
+              <div class="status-button <%= booking.approved %>">
                 <% if booking.approved == nil %>
                 Pending...
                 <% elsif  booking.approved == true %>
@@ -22,6 +22,8 @@
                 <% else %>
                 Refused
                 <% end %>
+            </div>
+            </div>
             </div>
           </div>
         </div>
