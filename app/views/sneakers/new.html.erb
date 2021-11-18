@@ -1,14 +1,21 @@
-
-<%= simple_form_for [@sneaker] do |f| %>
-  <%= f.input :brand %>
-  <%= f.input :name %>
-  <%= f.input :size %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :image, as: :file %>
-  <%= f.submit "Create your sneaker !", class: "btn btn-primary" %>
-<% end %>
-
-<% if policy(Sneaker).create? %>
-  <%= link_to "New sneaker", new_sneaker_path %>
-<% end %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add your sneaker</h3>
+          <%= simple_form_for [@sneaker] do |f| %>
+            <%= f.input :brand %>
+            <%= f.input :name %>
+            <%= f.input :size %>
+            <%= f.input :price %>
+            <%= f.input :description %>
+            <%= f.input :image, as: :file %>
+            <div class="d-flex justify-content-between align-items-center">
+            <%= link_to "Back", dashboard_path, class: "btn btn-back" %>
+            <%= f.submit "Create your sneaker !", class: "btn btn-primary" %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
