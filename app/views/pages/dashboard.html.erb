@@ -44,6 +44,7 @@
               End date: <%= booking.end_date%>
               Statut: <%= "nil" if booking.approved.nil? %>
             </p>
+            <%= link_to "approve", approve_booking_path(booking) %>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
 

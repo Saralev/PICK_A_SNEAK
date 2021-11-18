@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :update]
+  get "bookings/:id/approve", to: "bookings#approve", as: :approve_booking
 end
