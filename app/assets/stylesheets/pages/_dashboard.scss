@@ -1,0 +1,69 @@
+
+
+h4 {
+  text-align: center;
+}
+
+.rect {
+  border-radius: 20px;
+}
+
+.card-body  {
+
+  border-radius: 5px;
+  img {
+    width: 200px;
+    margin-bottom: 50px !important;
+  }
+}
+
+.card {
+  img {
+    width: 200px !important;
+  }
+}
+
+
+.status-button {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  bottom: 8px; right: 8px;
+  height: 20%;
+  font-family: "Bebas Neue", "cursive";
+}
+
+
+.status-button.nil {
+  color: yellow;
+}
+
+.status-button.false {
+  color: red;
+}
+
+.status-button.true {
+  color: green;
+}
+
+
+.booking-card {
+    background: #f4f4f4;
+    height: 300px;
+    width: 255px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    align-items: center;
+
+}
+
+.booking-card img {
+    height: 200px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
