@@ -28,13 +28,9 @@ lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting indust
  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"
 
 puts "Creating sneakers..."
-
-first = Sneaker.create!(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: 'lorem', user: benjamin)
-file = URI.open(Cloudinary::Uploader.upload('https://source.unsplash.com/1600x900/?sneaker')['secure_url'])
-first.image.attach(io: file, filename: 'sneaker.jpg', content_type: 'image/jpg')
-first.save!
 #Faire boucle pour l'appliquer à tous les autres
 
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: 'lorem', user: benjamin)
 Sneaker.create(address: "16 villa gaudelet, 75011 Paris", brand: "Nike", name: "Nike Waffle One SE ", size: 42, price: 135, description: lorem, user: chloe)
 Sneaker.create(address: "10 villa gaudelet, 75011 Paris", brand: "New balance", name: "New Balance - 327", size: 36, price: 160, description: lorem, user: eric)
 Sneaker.create(address: "1 passage du montenegro, 75019 Paris", brand: "Nike", name: "AIR FORCE 1 SHADOW ", size: 36, price: 120, description: lorem, user: aurelie)
@@ -45,3 +41,9 @@ Sneaker.create(address: "15 boulevard saint michel, 75006 Paris", brand: "Adidas
 Sneaker.create(address: "1 rue de l'université 75007, Paris", brand: "Nike", name: "Venture runner", size: 38, price: 105, description: lorem, user: chloe)
 Sneaker.create(address: "18 boulevard voltaire,75011 Paris", brand: "Vans", name: "OLD SKOOL PLATFORM - Baskets basses", size: 35, price: 90, description: lorem, user: elsa)
 puts "Sneakers created!"
+
+Sneaker.all.each do |sneaker|
+  file = URI.open(Cloudinary::Uploader.upload('https://source.unsplash.com/1600x900/?sneaker')['secure_url'])
+  sneaker.image.attach(io: file, filename: 'sneaker.jpg', content_type: 'image/jpg')
+  sneaker.save!
+end
