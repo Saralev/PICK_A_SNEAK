@@ -71,9 +71,6 @@
             <div class="sneaker-content-details">
               <h4>Model: <%= booking.sneaker.name %></h4>
             </div>
-            <div class="sneaker-content-details">
-              <h4>Owner Name: <%= booking.sneaker.user.first_name %></h4>
-            </div>
           </div>
           <div class="approve-refuse-btn">
             <h3 id="approve"><%= link_to "approve", approve_booking_path(booking)%></h3>
