@@ -1,102 +1,120 @@
-<div>
-  <div>
-    <h1>My dashboard</h1>
+<div class="dashboard-main-container">
+
+  <div class="main-title">
+    <hr ALIGN=RIGHT WIDTH="30%">
+      <h1>My dashboard</h1>
   </div>
-  <div>
-    <div>
-      <h2>Sneakers waiting for acceptation </h2>
+
+  <div class="dashboard-content-container">
+    <div class="dashboard-content-title">
+      <h2>🙏 Sneakers you want to rent 🙏</h2>
     </div>
-    <div class="main-containers">
-        <div style="display: flex">
-          <div id="cards" class='col-8 '>
-            <% @current_user_bookings.each do |booking| %>
-              <div class= "booking-card">
-                <div class="sneaker-image">
-                  <% if booking.sneaker.image.attached? %>
-                    <%= cl_image_tag booking.sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
-                  <% else %>
-                    <%= image_tag('sneak.png') %>
-                  <% end %>
-                </div>
-                <div class="sneaker-content">
-                  <h5>Start date: <%= booking.start_date.strftime('%d-%m-%Y')%> -</h5>
-                  <h5>End date: <%= booking.end_date.strftime('%d-%m-%Y')%></h5>
-                  <h5> <%= booking.sneaker.name %></h5>
-                  <h5> <%= booking.user.first_name %></h5>
-                </div>
-                <div class="status-button <%= booking.approved %>">
-                  <% if booking.approved == nil %>
-                    Pending...
-                  <% elsif  booking.approved == true %>
-                    Accepted
-                  <% else %>
-                    Refused
-                  <% end %>
-                </div>
+    <div class="dashboard-cards">
+      <% @current_user_bookings.each do |booking| %>
+        <div class= "booking-card">
+          <div class="sneaker-image">
+              <% if booking.sneaker.image.attached? %>
+              <%= cl_image_tag booking.sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+              <% else %>
+              <%= image_tag('sneak.png') %>
+              <% end %>
+          </div>
+          <div class="sneaker-content">
+            <div class="sneaker-content-details">
+              <h4>Start date: <%= booking.start_date.strftime('%d/%m/%Y')%></h4>
             </div>
-            <% end %>
+            <div class="sneaker-content-details">
+              <h4>End date: <%= booking.end_date.strftime('%d/%m/%Y')%></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Model: <%= booking.sneaker.name %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Owner Name: <%= booking.sneaker.user.first_name %></h4>
+            </div>
+          </div>
+          <div class="status-button <%= booking.approved %>">
+              <% if booking.approved == nil %>
+                 <h3 id="pending">Pending..</h3>
+              <% elsif  booking.approved == true %>
+                 <h3 id="accepted">Accepted!!</h3>
+              <% else %>
+                 <h3 id="refused">Refused..</h3>
+              <% end %>
           </div>
         </div>
-      </div>
-  </div>
-  <div>
-    <div>
-      <h2>Sneakers to review<h2>
+      <% end %>
     </div>
-    <div class="main-containers">
-        <div style="display: flex">
-          <div id="cards" class='col-8 '>
-            <% @bookings_ordered.each do |booking| %>
-              <div class= "booking-card">
-                <div class="sneaker-image">
-                  <% if booking.sneaker.image.attached? %>
-                    <%= cl_image_tag booking.sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
-                  <% else %>
-                    <%= image_tag('sneak.png') %>
-                  <% end %>
-                </div>
-                <div class="sneaker-content">
-                  <h5>Start date: <%= booking.start_date.strftime('%d-%m-%Y')%> -</h5>
-                  <h5>End date: <%= booking.end_date.strftime('%d-%m-%Y')%></h5>
-                  <h5> <%= booking.sneaker.name %></h5>
-                  <h5> <%= booking.user.first_name %></h5>
-                </div>
-                <div class="approve-refuse-btn">
-                  <%= link_to "approve", approve_booking_path(booking) %>
-                  <%= link_to "refuse", refuse_booking_path(booking)  %>
-                </div>
-              </div>
+  </div>
+
+  <div class="dashboard-content-container">
+    <div class="dashboard-content-title">
+      <h2>🤩 Does people want your sneaks? 🤩<h2>
+    </div>
+    <div class="dashboard-cards">
+      <% @bookings_ordered.each do |booking| %>
+        <div class= "booking-card">
+          <div class="sneaker-image">
+            <% if booking.sneaker.image.attached? %>
+            <%= cl_image_tag booking.sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+            <% else %>
+            <%= image_tag('sneak.png') %>
             <% end %>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div>
-      <h2>>My sneakers</h2>
-    </div>
-    <div>
-      <div class="main-containers">
-        <div style="display: flex">
-          <div id="cards" class='col-8 '>
-            <% @my_sneakers.each do |sneaker| %>
-              <div class="sneaker-image">
-                <% if sneaker.image.attached? %>
-                  <%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
-                <% else %>
-                  <%= image_tag('sneak.png') %>
-                <% end %>
-              </div>
-              <div class="sneaker-content">
-                <p><%= sneaker.name %></p>
-                <p><%= sneaker.size %></p>
-                <p><%= sneaker.price %></p>
-              </div>
-            <% end %>
+          <div class="sneaker-content">
+            <div class="sneaker-content-details">
+              <h4>Start date: <%= booking.start_date.strftime('%d/%m/%Y')%></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>End date: <%= booking.end_date.strftime('%d/%m/%Y')%></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Model: <%= booking.sneaker.name %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Owner Name: <%= booking.sneaker.user.first_name %></h4>
+            </div>
+          </div>
+          <div class="approve-refuse-btn">
+            <h3 id="approve"><%= link_to "approve", approve_booking_path(booking)%></h3>
+            <h3 id="refuse"><%= link_to "refuse", refuse_booking_path(booking)%></h3>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
+
+  <div class="dashboard-content-container">
+    <div class="dashboard-content-title">
+      <h2>🤓 All my sneakers 🤓</h2>
+    </div>
+    <div class="dashboard-cards">
+      <% @my_sneakers.each do |sneaker| %>
+        <div class= "booking-card">
+          <div class="sneaker-image">
+            <% if sneaker.image.attached? %>
+            <%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+            <% else %>
+            <%= image_tag('sneak.png') %>
+            <% end %>
+          </div>
+          <div class="sneaker-content">
+            <div class="sneaker-content-details">
+              <h4>Brand: <%= sneaker.brand %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Model: <%= sneaker.name %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Size: <%= sneaker.size %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Price: <%= sneaker.price %> €</h4>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
