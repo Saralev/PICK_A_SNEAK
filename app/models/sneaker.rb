@@ -10,7 +10,7 @@ class Sneaker < ApplicationRecord
   validates :address, presence: true
 
   pg_search_scope :search,
-    against: [ :name, :brand, :size, :address],
+    against: [ :name, :brand, :size, :address, :price],
     using: {
       tsearch: { prefix: true }
     }

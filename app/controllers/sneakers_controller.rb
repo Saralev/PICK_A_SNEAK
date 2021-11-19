@@ -33,6 +33,7 @@ class SneakersController < ApplicationController
     authorize @sneaker
     @user = current_user
     @sneaker.user_id = @user.id
+
     if @sneaker.save
       redirect_to sneaker_path(@sneaker)
     else
