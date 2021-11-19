@@ -12,7 +12,8 @@ class SneakersController < ApplicationController
       {
         lat: sneaker.latitude,
         lng: sneaker.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { sneaker: sneaker })
+        info_window: render_to_string(partial: "info_window", locals: { sneaker: sneaker }),
+        image_url: helpers.asset_url("sneak.png")
       }
     end
   end
