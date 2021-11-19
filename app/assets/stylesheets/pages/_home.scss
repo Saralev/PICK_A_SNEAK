@@ -12,10 +12,16 @@ border-radius: 5px;
 }
 #form-btn {
   margin-top: 10px;
-  background-color: rgb(98, 98, 214);
-  border-color: rgb(98, 98, 214);
+  // background-color: rgb(98, 98, 214);
+  // border-color: rgb(98, 98, 214);
   border-radius: 4px;
-  width: 100px;
+  width: 290px;
+}
+
+#form-btn:hover {
+  transition: background 2s ease;
+  background: linear-gradient(to right, #fcb69f 51%, #ccbbd2 100%);
+  box-shadow: 5px 5px 5px rgb(159, 157, 157);
 }
 
 .btn-sneakers-container{
@@ -23,6 +29,8 @@ border-radius: 5px;
   bottom: 8px;
   right: 20px;
 }
+
+
 
 .home-container-text {
   margin-left: 200px;

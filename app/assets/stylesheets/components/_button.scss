@@ -56,13 +56,14 @@
   background: #1BCB7F;
 }
 .btn-first {
-  color:grey;
+  color: white;
   padding: 8px 10px;
-  background: #1EDD88;
-  transition: background 0.3s ease;
+  // background: #1EDD88;
+  // transition: background 0.3s ease;
   background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
   text-align: center;
   border: none;
+  font-size: xx-large;
   margin-top: 40px;
 
 }
