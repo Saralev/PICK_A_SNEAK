@@ -21,16 +21,16 @@
           </div>
           <div class="sneaker-content">
             <div class="sneaker-content-details">
-              <h5>Start date:</h5><h6><%= booking.start_date.strftime('%d/%m/%Y')%></h6>
+              <h4>Start date: <%= booking.start_date.strftime('%d/%m/%Y')%></h4>
             </div>
             <div class="sneaker-content-details">
-              <h5>End date: </h5><h6><%= booking.end_date.strftime('%d/%m/%Y')%></h6>
+              <h4>End date: <%= booking.end_date.strftime('%d/%m/%Y')%></h4>
             </div>
             <div class="sneaker-content-details">
-              <h5>Model: </h5><h6><%= booking.sneaker.name %></h6>
+              <h4>Model: <%= booking.sneaker.name %></h4>
             </div>
             <div class="sneaker-content-details">
-              <h5>Owner Name: </h5><h6><%= booking.sneaker.user.first_name %></h6>
+              <h4>Owner Name: <%= booking.sneaker.user.first_name %></h4>
             </div>
           </div>
           <div class="status-button <%= booking.approved %>">
@@ -49,7 +49,7 @@
 
   <div class="dashboard-content-container">
     <div class="dashboard-content-title">
-      <h2>🤩 Look! People want your sneaks' 🤩<h2>
+      <h2>🤩 Does people want your sneaks? 🤩<h2>
     </div>
     <div class="dashboard-cards">
       <% @bookings_ordered.each do |booking| %>
@@ -63,16 +63,16 @@
           </div>
           <div class="sneaker-content">
             <div class="sneaker-content-details">
-              <h5>Start date:</h5><h6><%= booking.start_date.strftime('%d/%m/%Y')%></h6>
+              <h4>Start date: <%= booking.start_date.strftime('%d/%m/%Y')%></h4>
             </div>
             <div class="sneaker-content-details">
-              <h5>End date: </h5><h6><%= booking.end_date.strftime('%d/%m/%Y')%></h6>
+              <h4>End date: <%= booking.end_date.strftime('%d/%m/%Y')%></h4>
             </div>
             <div class="sneaker-content-details">
-              <h5>Model: </h5><h6><%= booking.sneaker.name %></h6>
+              <h4>Model: <%= booking.sneaker.name %></h4>
             </div>
             <div class="sneaker-content-details">
-              <h5>Owner Name: </h5><h6><%= booking.sneaker.user.first_name %></h6>
+              <h4>Owner Name: <%= booking.sneaker.user.first_name %></h4>
             </div>
           </div>
           <div class="approve-refuse-btn">
@@ -90,17 +90,28 @@
     </div>
     <div class="dashboard-cards">
       <% @my_sneakers.each do |sneaker| %>
-        <div class="sneaker-image">
-          <% if sneaker.image.attached? %>
-          <%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
-          <% else %>
-          <%= image_tag('sneak.png') %>
-          <% end %>
-        </div>
-        <div class="sneaker-content">
-          <p><%= sneaker.name %></p>
-          <p><%= sneaker.size %></p>
-          <p><%= sneaker.price %></p>
+        <div class= "booking-card">
+          <div class="sneaker-image">
+            <% if sneaker.image.attached? %>
+            <%= cl_image_tag sneaker.image.key, height: 300, width: 400, crop: :fill %></p>
+            <% else %>
+            <%= image_tag('sneak.png') %>
+            <% end %>
+          </div>
+          <div class="sneaker-content">
+            <div class="sneaker-content-details">
+              <h4>Brand: <%= sneaker.brand %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Model: <%= sneaker.name %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Size: <%= sneaker.size %></h4>
+            </div>
+            <div class="sneaker-content-details">
+              <h4>Price: <%= sneaker.price %> €</h4>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

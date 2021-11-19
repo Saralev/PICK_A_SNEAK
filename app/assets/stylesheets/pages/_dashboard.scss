@@ -51,11 +51,16 @@
     min-width: 0;
     word-wrap: break-word;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    max-height: 450px;
+    min-height: 450px;
+    background: linear-gradient(0.35turn, #c0ebea, #f9f9f9);
 }
 
 .booking-card img {
-  height: 200px;
-  width: 250px;
+  min-height: 150px;
+  max-height: 150px;
+  min-width: 250px;
   object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -63,17 +68,21 @@
   border-bottom-right-radius: 0px;
 }
 
-.sneaker-content-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-left: 35px;
-    margin-right: 35px;
-    h6 {
-      margin-right: 0px;
-      margin-bottom: 8px;
-    }
+.sneaker-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.sneaker-content>* {
+  flex: 1 1 160px;
+  margin: 10px;
+  }
+
+
+.sneaker-content-details h6 {
+  margin-left: 65px;
+  margin-bottom: 5px;
 }
 
 .status-button {
