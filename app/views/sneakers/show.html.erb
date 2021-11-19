@@ -4,7 +4,7 @@
         <div class="left d-flex flex-column align-items-center">
           <h1><%= @sneaker.brand %></h2>
           <% if @sneaker.image.attached? %>
-            <div class="img" style="background-image: url('<%= cl_image_path @sneaker.image.key, height: 200, width: 800, crop: :fill %>')"></div>
+            <div class="img" style="background-image: url('<%= cl_image_path @sneaker.image.key %>')"></div>
           <% else %>
             <div class="img" style="background-image: url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2787&q=80')"></div>
           <% end %>
