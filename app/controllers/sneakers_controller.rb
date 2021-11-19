@@ -35,7 +35,7 @@ class SneakersController < ApplicationController
     @sneaker.user_id = @user.id
 
     if @sneaker.save
-      redirect_to sneaker_path(@sneaker)
+      redirect_to dashboard_path
     else
       render :new
     end
