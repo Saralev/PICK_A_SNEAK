@@ -16,7 +16,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: #83c5be;;
   transition: background 0.3s ease;
 }
 
@@ -46,12 +46,31 @@
 
 .btn-success {
   color: white;
-  border-radius: 20px;
+  border-radius: 4px;
   transform: scale(0.9);
-  background: #1EDD88;
+  background: #83c5be;
 }
 
 .btn-success:hover {
   color: white;
   background: #1BCB7F;
+}
+.btn-first {
+  color:grey;
+  padding: 8px 10px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 51%, #ffecd2 100%);
+  text-align: center;
+  border: none;
+  margin-top: 40px;
+
+}
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.form-control {
+margin-bottom: 30px;
 }
