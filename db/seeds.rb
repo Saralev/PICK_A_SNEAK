@@ -44,7 +44,7 @@ puts "Sneakers created!"
 
 puts "Adding sneakers pics"
 Sneaker.all.each do |sneaker|
-  file = URI.open(Cloudinary::Uploader.upload('https://source.unsplash.com/1600x900/?sneaker')['secure_url'])
+  file = URI.open(Cloudinary::Uploader.upload('https://source.unsplash.com/700x900/?sneaker')['secure_url'])
   sneaker.image.attach(io: file, filename: 'sneaker.jpg', content_type: 'image/jpg')
   sneaker.save!
 end
