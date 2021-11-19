@@ -1,8 +1,27 @@
 mapboxgl-popup {
   max-width: 200px;
+  height: 600px
+}
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+.marker {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.map {
+  border-radius: 20px;
+overflow: hidden;
+  width: 400px;
+  height: 600px;
 }
