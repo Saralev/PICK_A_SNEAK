@@ -15,23 +15,25 @@
   <div class="content-container">
     <div id="cards" class='col-8 '>
       <% @sneakers.each do |sneaker| %>
+      <%= link_to sneaker_path(sneaker) do %>
       <div class= "card">
         <div class="card-image">
-          <%= link_to sneaker_path(sneaker) do %>
               <% if sneaker.image.attached? %>
               <%= cl_image_tag sneaker.image.key %>
               <% else %>
               <%= image_tag('sneak.png') %></p>
             <% end %>
-          <% end %>
         </div>
         <div class="card-details">
           <h4>Brand:</h4>
           <h5><%= sneaker.brand %></h5>
           <h4>Model:</h4>
           <h5><%= sneaker.name %></h5>
+          <h4>Price:</h4>
+          <h5><%= sneaker.price %>$</h5>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
 
