@@ -25,22 +25,40 @@
 
 #cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 35px 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 5em;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: end;
+  justify-items: center;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: none;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+  max-height: 400px;
+  min-height: 400px;
+  background: linear-gradient(0.35turn, #c0ebea, #f9f9f9);
 }
 
 .card-image img{
-  width: 100%;
-  height: 200px;
+  min-height: 150px;
+  max-height: 150px;
+  min-width: 250px;
+  max-width: 250px;
   object-fit: cover;
-  border-radius: 5%;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .card-details {
@@ -48,18 +66,18 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 5px;
-  padding-left: 15px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .card-details h4 {
-  margin-top: -5px;
+  margin-top: 0px;
 }
 .card-details h5 {
   margin-left: 10px;
-  padding-bottom: -5px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .map {
@@ -70,5 +88,13 @@
 
 a {
   text-decoration: none;
-  color: #000;
+  color: black;
+}
+
+a:hover {
+  color:beige;
+}
+
+.card:hover {
+  background: linear-gradient(0.35turn, #c0ebea, #8f6bbf);
 }
