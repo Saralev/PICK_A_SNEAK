@@ -30,16 +30,16 @@ lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting indust
 puts "Creating sneakers..."
 #Faire boucle pour l'appliquer à tous les autres
 
-Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Crocs Bob l'éponge", size: 38, price: 42, description: 'lorem', user: benjamin)
-Sneaker.create(address: "16 villa gaudelet, 75011 Paris", brand: "Nike", name: "Nike Waffle One SE ", size: 42, price: 135, description: lorem, user: chloe)
-Sneaker.create(address: "10 villa gaudelet, 75011 Paris", brand: "New balance", name: "New Balance - 327", size: 36, price: 160, description: lorem, user: eric)
-Sneaker.create(address: "1 passage du montenegro, 75019 Paris", brand: "Nike", name: "AIR FORCE 1 SHADOW ", size: 36, price: 120, description: lorem, user: aurelie)
-Sneaker.create(address: "10 rue saint-lazare, 75009 Paris", brand: "Veja", name: "Veja Venturi ", size: 41, price: 120, description: lorem, user: benjamin)
-Sneaker.create(address: "10 boulevard haussmann, 75008 Paris", brand: "Converse", name: "Chuck Taylor All Star Classic", size: 37, price: 90, description: lorem, user: elsa)
-Sneaker.create(address: "9 rue petit 75019, Paris", brand: "Adidas", name: "Baskets Ozweego", size: 41, price: 100, description: lorem, user: aurelie)
-Sneaker.create(address: "15 boulevard saint michel, 75006 Paris", brand: "Adidas", name: "STAN SMITH - Baskets basses", size: 37, price: 100, description: lorem, user: eric)
-Sneaker.create(address: "1 rue de l'université 75007, Paris", brand: "Nike", name: "Venture runner", size: 38, price: 105, description: lorem, user: chloe)
-Sneaker.create(address: "18 boulevard voltaire,75011 Paris", brand: "Vans", name: "OLD SKOOL PLATFORM - Baskets basses", size: 35, price: 90, description: lorem, user: elsa)
+Sneaker.create(address: "16 villa gaudelet, Paris", brand: "Crocs", name: "Bayaband Clog", size: 38, price: 42, description: 'In really good state, best for summer times', user: benjamin)
+Sneaker.create(address: "16 villa gaudelet, 75011 Paris", brand: "Nike", name: "Waffle One SE ", size: 42, price: 135, description: "Superb nike pair, size perfectly and smell good", user: chloe)
+Sneaker.create(address: "10 villa gaudelet, 75011 Paris", brand: "New balance", name: "327", size: 36, price: 160, description: "Brand new pair of 327, happy to share it with you guys", user: eric)
+Sneaker.create(address: "1 passage du montenegro, 75019 Paris", brand: "Nike", name: "AIR FORCE 1 SHADOW ", size: 36, price: 120, description: "Book this pair and your feets will look godly", user: aurelie)
+Sneaker.create(address: "10 rue saint-lazare, 75009 Paris", brand: "Veja", name: "Veja Venturi ", size: 41, price: 120, description: "Vejaaaa, you will love theses shoes I guarantee you!", user: benjamin)
+Sneaker.create(address: "10 boulevard haussmann, 75008 Paris", brand: "Converse", name: "Chuck Taylor All Star Classic", size: 37, price: 90, description: "Good old style for good looking people", user: elsa)
+Sneaker.create(address: "9 rue petit 75019, Paris", brand: "Adidas", name: "Ozweego", size: 41, price: 100, description: "Bought it for 60$ and renting it for 100$, business is business", user: aurelie)
+Sneaker.create(address: "15 boulevard saint michel, 75006 Paris", brand: "Adidas", name: "STAN SMITH", size: 37, price: 100, description: "Match perfectly with people with a lot of originality", user: eric)
+Sneaker.create(address: "1 rue de l'université 75007, Paris", brand: "Nike", name: "Venture runner", size: 38, price: 105, description: "Need a pair for your running trips? This pair is made of you", user: chloe)
+Sneaker.create(address: "18 boulevard voltaire,75011 Paris", brand: "Vans", name: "OLD SKOOL PLATFORM", size: 35, price: 90, description: "Will be the best match for a skatepark day", user: elsa)
 puts "Sneakers created!"
 
 Sneaker.all.each do |sneaker|
