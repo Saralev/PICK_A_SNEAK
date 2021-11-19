@@ -52,8 +52,8 @@
     word-wrap: break-word;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     max-width: 250px;
-    max-height: 450px;
-    min-height: 450px;
+    max-height: 475px;
+    min-height: 475px;
     background: linear-gradient(0.35turn, #c0ebea, #f9f9f9);
 }
 
@@ -61,6 +61,7 @@
   min-height: 150px;
   max-height: 150px;
   min-width: 250px;
+  max-width: 250px;
   object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
